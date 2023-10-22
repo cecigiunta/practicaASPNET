@@ -3,10 +3,19 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
    <%--Ese contenido, se va a alojar en el contenedor con id "MainContent", que esta en masterpage--%>
-    <div class="jumbotron">
-        <h1>Hola !</h1>
-        <asp:Label ID="lblUser" runat="server" Text="Label"></asp:Label>
-        <p class="lead">ingresaste a la página!</p>
+    <div>
+        <%--abro llaves de C# para hacer un if dentro del HTML--%>
+        <% if(user != "")
+            { %>
+
+            <h2>Ingresaste!</h2>
+            <asp:Label ID="lblUser" runat="server" Text="text"></asp:Label>
+            <%} 
+            else { %> 
+
+            <h1>Debes loguearte</h1>
+            <a href="ejConMasterPage">Login</a>
+            <%} %>
     </div>
 
 

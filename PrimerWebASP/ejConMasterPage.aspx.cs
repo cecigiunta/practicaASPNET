@@ -23,21 +23,19 @@ namespace PrimerWebASP
         protected void saludar(object sender, EventArgs e)
         {
             //Se creo automaticamente cuando le di click a la lista de eventos del controlador aspx
-
             string nombre = txtNombre.Text;
-            LabelSaludo.Text = "Hola " + nombre;
+            string password = txtPassword.Text;
 
-            //Para navegar. Response es un objeto de Page, es una propertie
-            //Se le agrega un "false" porque suele tirar una excepcion(thread abort exception) y cortar el hilo de ejecucion
-            //para evitarlo usamos el false
+            //Para enviar parámetros entre paginas, los guardo en el objeto SESIÓN
+            //Una vez que se les agrega, lo vamos a poder recuperar estos datos desde CUALQUIER PAGINA haciendo referencia al nombre
+            Session.Add("usuario", nombre);
+            Session.Add("pass", password);
 
-            //PASARLE PARÁMETROS POR URL - query string
-            Response.Redirect("Default.aspx?nombre=" + nombre , false);
+
+            Response.Redirect("Default.aspx", false);
+
+
         }
 
-        protected void textChanged(object sender, EventArgs e)
-        {
-            Label2.Text = "El texto cambio";
-        }
     }
 }

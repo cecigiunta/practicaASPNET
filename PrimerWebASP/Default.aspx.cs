@@ -9,15 +9,13 @@ namespace PrimerWebASP
 {
     public partial class _Default : Page
     {
+        public string user { set; get; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //En el Load de la página DEfault, capturamos el valor
-            //Dentro del corchete, va el parámetro tal cual como lo puse en la URL
-            //Devuelve un object, así que le tengo que hacer .ToString
-
-            //Uso operador TERNARIO para validar que no sea null
-            string user = Request.QueryString["nombre"] != null ? Request.QueryString["nombre"].ToString() : "Logueate!!";
-            lblUser.Text = user + "Tu ingreso fue exitoso!!";
+            //Recupero los parametros desde el objeto session
+            user = Session["usuario"] != null ? Session["usuario"].ToString() : "";
+            lblUser.Text = user + " Tu ingreso fue exitoso!!";
         }
     }
 }

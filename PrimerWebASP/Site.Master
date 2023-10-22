@@ -64,6 +64,7 @@
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/About">Acerca de</a></li>
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
+                        <li><a runat="server" href="~/Grilla">Grilla</a></li>
 
                         <%--AGREGO NUEVA PAGINA A MI MENU--%>
                         <li><a runat="server" href="~/ejConMasterPage">EJEMPLO</a></li>

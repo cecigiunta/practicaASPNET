@@ -4,19 +4,16 @@
     contentplaceholder de la master--%>
     <%--En el HTML me aparece l4a tool box con controles, los arrastro--%>
 
-    <h1>Ejemplo con MASTER</h1>    
+    <h1>Login Page :) </h1>    
 
     <%--Le activo el autopostback para que el TextChanged se haga en el momento--%>
-    <asp:TextBox ID="txtNombre" runat="server" OnTextChanged="textChanged"></asp:TextBox>
-
+    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+    <br />
+     <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+    <br />
     <asp:Button ID="Button1" runat="server" Text="Saludar" OnClick="saludar" /> 
     <%--Al elegirle OnClick y clickear la lista, se crea un evento automaticamente en el cs--%>
-
-    <asp:Label ID="LabelSaludo" runat="server" Text=""></asp:Label>
-
-
-    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
-   
+ 
 
     <%--Para navegar entre paginas haciendo click en el link--%>
     <a href="About">Regresar</a>
