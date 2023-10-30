@@ -11,8 +11,18 @@ namespace PrimerWebASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AutoNegocio negocio = new AutoNegocio();
-            dgvAutos.DataSource = negocio.listar();
+            //Primero, voy a preguntar si la lista no existe
+            if (Session["listaAutos"] == null)
+            {
+                AutoNegocio negocio = new AutoNegocio();
+
+                //Como la grilla no está en memoria, no puedo agregarle cosas como si estuviera.
+                //Por eso, la tengo que guardar en Session
+                Session.Add("listaAutos", negocio.listar()); 
+            }
+
+            //Entonces, ahora que existe, se la asigno al DataSource
+            dgvAutos.DataSource = Session["listaAutos"];
             dgvAutos.DataBind();
         }
     }
