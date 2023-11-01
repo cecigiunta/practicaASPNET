@@ -28,13 +28,6 @@
                 <a href="Default.aspx">Cancelar</a>
 
             </div>
-
-
-
-
-
-            <%--
-        public bool Usado { get; set; }--%>
         </div>
 
     </div>

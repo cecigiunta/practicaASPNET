@@ -25,5 +25,15 @@ namespace PrimerWebASP
             dgvAutos.DataSource = Session["listaAutos"];
             dgvAutos.DataBind();
         }
+
+
+
+        protected void dgvAutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //En este método voy a capturar los datos de la lista
+            var id= dgvAutos.SelectedDataKey.Value.ToString();
+
+           Response.Redirect("AutoForm.aspx?id=" + id);
+        } 
     }
 }

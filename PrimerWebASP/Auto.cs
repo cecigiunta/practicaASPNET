@@ -29,15 +29,12 @@ namespace PrimerWebASP
             lista[0].Color = "Rojo";
             lista[0].Usado = true;
 
-            lista[0].Id = 2;
-            lista[0].Modelo = "Vento";
-            lista[0].Color = "gris";
-            lista[0].Usado = true;
+            lista[1].Id = 2;
+            lista[1].Modelo = "Vento";
+            lista[1].Color = "gris";
+            lista[1].Usado = true;
 
             return lista;
         }
-
-
-
     }
 }

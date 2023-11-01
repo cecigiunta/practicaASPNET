@@ -15,10 +15,20 @@ namespace PrimerWebASP
             dropColor.Items.Add("Blanco");
             dropColor.Items.Add("Rojo");
 
+            //Si es distinto de Null, significa que llegó al Form trayendo un ID seleccionado
+            if (Request.QueryString["id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["id"].ToString()); //me lo guardo en una variable
 
+                //Con el ID voy a buscar el objeto que quiero cargar. Ese objeto lo tengo en la lista guardada en Session
+                //Obtengo mi lista temporal desde la sesión
+                List<Auto> temporal = (List<Auto>)Session["listaAutos"];
+                Auto seleccionado = temporal.Find(x => x.Id == id);
 
-
-
+                txtModelo.Text = seleccionado.Modelo;
+                txtId.Text = seleccionado.Id.ToString();
+                txtId.ReadOnly = true; //cuando me trae el ID, no quiero que se modifique, que sea de solo lectura
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
